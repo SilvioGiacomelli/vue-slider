@@ -39,7 +39,7 @@
                             <div
                             
                             class="my-carousel-item active">
-                                <img class="img-fluid" :src="images[counteR].url" alt="${images[i].title} picture">
+                                <img class="img-fluid" :src="images[counteR].url">
                                 <div class="item-description px-3">
                                     <h2>{{images[counteR].title}}</h2>
                                     <p>{{images[counteR].description}}</p>
@@ -57,7 +57,8 @@
 
                             <div
                             v-for="(img, index) in images" 
-                            class="my-thumbnail active">
+                            :class="{'active': index === counteR}"
+                            class="my-thumbnail">
                                 <img class="img-fluid" :src="img.url" alt="Thumbnail of Svezia picture">
                             </div>
 

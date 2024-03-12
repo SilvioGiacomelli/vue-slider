@@ -41,11 +41,13 @@ createApp({
     methods: {
         moVe(booLean){
             booLean ? this.counteR++ : this.counteR--;
+            if(this.counteR == this.images.length){
+                this.counteR = 0
+            } else if(this.counteR < 0){
+                this.counteR = this.images.length -1;
+            }
         }
-    },
 
-    mounted() {
-        console.log(counteR);
     },
 
 }).mount('#app')
