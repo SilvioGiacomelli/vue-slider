@@ -35,6 +35,7 @@ createApp({
 
             counteR : 0,
             booLean : true,
+            isAttivazione :true,
         }
     },
 
@@ -46,9 +47,19 @@ createApp({
             } else if(this.counteR < 0){
                 this.counteR = this.images.length -1;
             }
+        },
+        autoPlay(){
+            setInterval( ()=>{
+                if(this.isAttivazione){
+                    this.moVe(true)
+                }
+            }, 3000 )
         }
-
     },
+
+    mounted(){
+        this.autoPlay()
+    }
 
 }).mount('#app')
 
